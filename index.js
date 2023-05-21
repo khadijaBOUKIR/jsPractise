@@ -1,47 +1,48 @@
 function GetPositionOfGreaterNumber(table) {
-    const theLargest = extractNumbersFromArray(table)
-    return returnedLargestNb(theLargest) // return nb
+    const tableOfNumbers = extractNumbersFromArray(table)
+    return returnedLargestNb(tableOfNumbers, table)
 }
 
 function extractNumbersFromArray(table) {
-    let theLargest = [];
+    let tableOfNumbers = [];
 
     for (let j = 0; j < table.length; j++) {
-        theLargest[j] = table[j].nb;
+        tableOfNumbers[j] = table[j].nb;
     }
-    return theLargest
+    return tableOfNumbers
 }
 
-function returnedLargestNb(tab) {
-    let nb = tab[0];
-    for (let i = 0; i < tab.length; i++) {
-        if (nb < tab[i])
-            nb = tab[i]
+function returnedLargestNb(tableOfNumbers, table) {
+    let theLargest = tableOfNumbers[0];
+    for (let i = 0; i < tableOfNumbers.length; i++) {
+        if (theLargest < tableOfNumbers[i])
+            theLargest = tableOfNumbers[i]
     }
-    return returnedLargestID(tab) //?
+    return returnedLargestID(table, theLargest)
 }
 
-function returnedLargestID(tableau) {
-    let id = tab.indexOf(nb);
-    for (let k = 0; k < tableau.length; k++) {
-
+function returnedLargestID(table, theLargest) {
+    let id = 0;
+    for (let k = 0; k < table.length; k++) {
+        if (table[k].nb === theLargest)
+            id = table[k].id
     }
     return id
 }
-console.log("the largest is :",
+console.log("the id of the largest of the [ { id: 11, nb: 5 }, { id: 1, nb: 13 }, { id: 12, nb: 0 }, { id: 31, nb: 75 }] is: ",
     GetPositionOfGreaterNumber([
-        { id: 0, nb: 5 },
+        { id: 11, nb: 5 },
         { id: 1, nb: 13 },
-        { id: 2, nb: 0 },
-        { id: 3, nb: 75 }
+        { id: 12, nb: 0 },
+        { id: 31, nb: 75 }
     ])
 );
 
-console.log("the largest is :",
+console.log("the id of the largest of the [ { id: 10, nb: 105 }, { id: 51, nb: 13 }, { id: 28, nb: 0 }, { id: 63, nb: 75 }] is: ",
     GetPositionOfGreaterNumber([
-        { id: 0, nb: 105 },
-        { id: 1, nb: 13 },
-        { id: 2, nb: 0 },
-        { id: 3, nb: 75 }
+        { id: 10, nb: 105 },
+        { id: 51, nb: 13 },
+        { id: 28, nb: 0 },
+        { id: 63, nb: 75 }
     ])
 );
