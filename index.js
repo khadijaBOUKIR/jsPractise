@@ -1,6 +1,9 @@
 function GetPositionOfGreaterNumber(table) {
-    const tableOfNumbers = extractNumbersFromArray(table)
-    return returnedLargestNb(tableOfNumbers, table)
+    if (table !== undefined && table.length > 0) {
+        const tableOfNumbers = extractNumbersFromArray(table)
+        return returnedLargestNb(tableOfNumbers, table)
+    }
+    return 'your table is empty or undefined'
 }
 
 function extractNumbersFromArray(table) {
@@ -22,7 +25,7 @@ function returnedLargestNb(tableOfNumbers, table) {
 }
 
 function returnedLargestID(table, theLargest) {
-    let id = 0;
+    let id = table[0].id;
     for (let k = 0; k < table.length; k++) {
         if (table[k].nb === theLargest)
             id = table[k].id
