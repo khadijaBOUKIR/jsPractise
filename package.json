@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/khadijaBOUKIR/jsPractise/issues"
   },
-  "homepage": "https://github.com/khadijaBOUKIR/jsPractise#readme"
+  "homepage": "https://github.com/khadijaBOUKIR/jsPractise#readme",
+  "dependencies": {
+    "mocha": "^10.2.0"
+  }
 }
