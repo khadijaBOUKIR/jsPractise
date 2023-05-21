@@ -1,38 +1,49 @@
 function GetPositionOfGreaterNumber(table) {
-    if (table !== undefined && table.length > 0) {
-        const tableOfNumbers = extractNumbersFromArray(table)
-        return returnedLargestNb(tableOfNumbers, table)
+  if (table === undefined) {
+    return "your table is undefined";
+  }
+  if (table.length === 0) {
+    return "your table is empty";
+  }
+  if (table.length === 0) {
+    return "your table is empty";
+  }
+  let isArrayOfObject = true;
+  for (const element of table) {
+    if (typeof element !== "object") {
+      isArrayOfObject = false;
     }
-    return 'your table is empty or undefined'
+    if (!isArrayOfObject) return "your table is not array of Object";
+
+    const tableOfNumbers = extractNumbersFromArray(table);
+    return returnedLargestNb(tableOfNumbers, table);
+  }
 }
-
 function extractNumbersFromArray(table) {
-    let tableOfNumbers = [];
+  let tableOfNumbers = [];
 
-    for (let j = 0; j < table.length; j++) {
-        tableOfNumbers[j] = table[j].nb;
-    }
-    return tableOfNumbers
+  for (let k = 0; k < table.length; k++) {
+    tableOfNumbers[k] = table[k].nb;
+  }
+  return tableOfNumbers;
 }
 
 function returnedLargestNb(tableOfNumbers, table) {
-    let theLargest = tableOfNumbers[0];
-    if (table.length !== 1) {
-        for (let i = 0; i < tableOfNumbers.length; i++) {
-            if (theLargest < tableOfNumbers[i])
-                theLargest = tableOfNumbers[i]
-        }
+  let theLargest = tableOfNumbers[0];
+  if (table.length !== 1) {
+    for (let k = 0; k < tableOfNumbers.length; k++) {
+      if (theLargest < tableOfNumbers[k]) theLargest = tableOfNumbers[k];
     }
-    return returnedLargestID(table, theLargest)
+  }
+  return returnedLargestID(table, theLargest);
 }
 
 function returnedLargestID(table, theLargest) {
-    let id = table[0].id;
-    if (table.length !== 1) {
-        for (let k = 0; k < table.length; k++) {
-            if (table[k].nb === theLargest)
-                id = table[k].id
-        }
+  let id = table[0].id;
+  if (table.length !== 1) {
+    for (let k = 0; k < table.length; k++) {
+      if (table[k].nb === theLargest) id = table[k].id;
     }
-    return id
+  }
+  return id;
 }
