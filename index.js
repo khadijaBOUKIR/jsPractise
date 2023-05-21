@@ -29,20 +29,3 @@ function returnedLargestID(table, theLargest) {
     }
     return id
 }
-console.log("the id of the largest of the [ { id: 11, nb: 5 }, { id: 1, nb: 13 }, { id: 12, nb: 0 }, { id: 31, nb: 75 }] is: ",
-    GetPositionOfGreaterNumber([
-        { id: 11, nb: 5 },
-        { id: 1, nb: 13 },
-        { id: 12, nb: 0 },
-        { id: 31, nb: 75 }
-    ])
-);
-
-console.log("the id of the largest of the [ { id: 10, nb: 105 }, { id: 51, nb: 13 }, { id: 28, nb: 0 }, { id: 63, nb: 75 }] is: ",
-    GetPositionOfGreaterNumber([
-        { id: 10, nb: 105 },
-        { id: 51, nb: 13 },
-        { id: 28, nb: 0 },
-        { id: 63, nb: 75 }
-    ])
-);
