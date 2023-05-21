@@ -19,4 +19,12 @@ describe("Testing GetPositionOfGreaterNumber", function () {
     const res = GetPositionOfGreaterNumber([1, 2, 3]);
     assert.strictEqual(res, "your table is not array of Object");
   });
+  it("should return : ", function () {
+    const res = GetPositionOfGreaterNumber([
+      { id: 12, nb: 5, x: 2 },
+      { id: 22 },
+      {},
+    ]);
+    assert.strictEqual(res, "your object isn't valid");
+  });
 });
