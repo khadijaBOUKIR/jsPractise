@@ -18,12 +18,15 @@ function returnedLargestNb(tab) {
         if (nb < tab[i])
             nb = tab[i]
     }
-    return returnedLargestID(theLargest) //?
+    return returnedLargestID(tab) //?
 }
 
 function returnedLargestID(tableau) {
-    nb
-    return nb //?
+    let id = tab.indexOf(nb);
+    for (let k = 0; k < tableau.length; k++) {
+
+    }
+    return id
 }
 console.log("the largest is :",
     GetPositionOfGreaterNumber([
